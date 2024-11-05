@@ -3,9 +3,24 @@ import fs from "fs";
 import { v4 as uuidv4 } from "uuid";
 const router = express.Router();
 
+const readData = () => {
+  try {
+    return JSON.parse(fs.readFileSync(process.env.DATA, "utf8"));
+  } catch (error) {
+    throw new Error("Error reading data from file.");
+  }
+};
+
+const writeData = (data) => {
+  try {
+    fs.writeFileSync(process.env.DATA, JSON.stringify(data, null, 2));
+  } catch (error) {
+    throw new Error("Error writing data to file.");
+  }
+};
+
 router.get("/", (req, res) => {
-  const jsonData = fs.readFileSync(process.env.DATA, "utf8");
-  const videosData = JSON.parse(jsonData);
+  const videosData = readData();
   let videoList = [];
 
   videosData.map((video) => {
@@ -26,11 +41,11 @@ router.post("/", (req, res) => {
 
   const newVideo = {
     id: uuidv4(),
-    title: title,
+    title,
     channel: "Emily Jane",
     image:
       "https://unit-3-project-api-0a5620414506.herokuapp.com/images/image0.jpg",
-    description: description,
+    description,
     views: 123456,
     likes: 0,
     duration: "4:01",
@@ -39,10 +54,9 @@ router.post("/", (req, res) => {
     comments: [],
   };
 
-  const jsonData = fs.readFileSync(process.env.DATA, "utf8");
-  let videosData = JSON.parse(jsonData);
+  let videosData = readData();
   videosData.push(newVideo);
-  fs.writeFileSync(process.env.DATA, JSON.stringify(videosData));
+  writeData(videosData);
 
   res.status(201).json(newVideo);
 });
@@ -50,7 +64,7 @@ router.post("/", (req, res) => {
 router.get("/:id", (req, res) => {
   const { id: requestVideoId } = req.params;
   const jsonData = fs.readFileSync(process.env.DATA, "utf8");
-  const videosData = JSON.parse(jsonData);
+  const videosData = readData();
 
   const video = videosData.find((video) => video.id === requestVideoId);
 
@@ -65,7 +79,7 @@ router.get("/:id", (req, res) => {
 
 router.post("/:id/comments", (req, res) => {
   if (Object.keys(req.body).length === 0) {
-    res.status(404).json({
+    res.status(204).json({
       message: "Request is missing request body. Could not post comment.",
     });
   }
@@ -75,14 +89,13 @@ router.post("/:id/comments", (req, res) => {
 
   const newComment = {
     id: uuidv4(),
-    name: name,
-    comment: comment,
+    name,
+    comment,
     likes: 0,
     timestamp: Date.now(),
   };
 
-  const jsonData = fs.readFileSync(process.env.DATA, "utf8");
-  const videosData = JSON.parse(jsonData);
+  const videosData = readData();
   const video = videosData.find((video) => video.id === videoId);
 
   if (!video) {
@@ -92,16 +105,14 @@ router.post("/:id/comments", (req, res) => {
   }
 
   video.comments.push(newComment);
-  fs.writeFileSync(process.env.DATA, JSON.stringify(videosData));
+  writeData(videosData);
   res.status(201).json(newComment);
 });
 
 router.delete("/:videoId/comments/:commentId", (req, res) => {
   const { videoId, commentId } = req.params;
 
-  const jsonData = fs.readFileSync(process.env.DATA, "utf8");
-  const videosData = JSON.parse(jsonData);
-
+  const videosData = readData();
   const video = videosData.find((video) => video.id === videoId);
 
   if (!video) {
@@ -121,7 +132,7 @@ router.delete("/:videoId/comments/:commentId", (req, res) => {
   }
 
   const removedComment = video.comments.splice(commentIndex, 1);
-  fs.writeFileSync(process.env.DATA, JSON.stringify(videosData));
+  writeData(videosData);
   res.status(200).json(removedComment);
 });
 
