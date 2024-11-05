@@ -4,7 +4,7 @@ import { v4 as uuidv4 } from "uuid";
 const router = express.Router();
 
 router.get("/", (req, res) => {
-  const jsonData = fs.readFileSync("./data/videos.json", "utf8");
+  const jsonData = fs.readFileSync(process.env.DATA, "utf8");
   const videosData = JSON.parse(jsonData);
   let videoList = [];
 
@@ -39,18 +39,17 @@ router.post("/", (req, res) => {
     comments: [],
   };
 
-  const jsonData = fs.readFileSync("./data/videos.json", "utf8");
+  const jsonData = fs.readFileSync(process.env.DATA, "utf8");
   let videosData = JSON.parse(jsonData);
   videosData.push(newVideo);
-  fs.writeFileSync("./data/videos.json", JSON.stringify(videosData));
-  console.log(videosData);
+  fs.writeFileSync(process.env.DATA, JSON.stringify(videosData));
 
   res.status(201).json(newVideo);
 });
 
 router.get("/:id", (req, res) => {
   const { id: requestVideoId } = req.params;
-  const jsonData = fs.readFileSync("./data/videos.json", "utf8");
+  const jsonData = fs.readFileSync(process.env.DATA, "utf8");
   const videosData = JSON.parse(jsonData);
 
   const video = videosData.find((video) => video.id === requestVideoId);
