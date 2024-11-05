@@ -63,4 +63,66 @@ router.get("/:id", (req, res) => {
   }
 });
 
+router.post("/:id/comments", (req, res) => {
+  if (Object.keys(req.body).length === 0) {
+    res.status(404).json({
+      message: "Request is missing request body. Could not post comment.",
+    });
+  }
+
+  const { name, comment } = req.body;
+  const { id: videoId } = req.params;
+
+  const newComment = {
+    id: uuidv4(),
+    name: name,
+    comment: comment,
+    likes: 0,
+    timestamp: Date.now(),
+  };
+
+  const jsonData = fs.readFileSync(process.env.DATA, "utf8");
+  const videosData = JSON.parse(jsonData);
+  const video = videosData.find((video) => video.id === videoId);
+
+  if (!video) {
+    res.status(404).json({
+      message: "No video with that id exists. Unable to post comment.",
+    });
+  }
+
+  video.comments.push(newComment);
+  fs.writeFileSync(process.env.DATA, JSON.stringify(videosData));
+  res.status(201).json(newComment);
+});
+
+router.delete("/:videoId/comments/:commentId", (req, res) => {
+  const { videoId, commentId } = req.params;
+
+  const jsonData = fs.readFileSync(process.env.DATA, "utf8");
+  const videosData = JSON.parse(jsonData);
+
+  const video = videosData.find((video) => video.id === videoId);
+
+  if (!video) {
+    res.status(404).json({
+      message: "No video with that id exists. Unable to delete comment",
+    });
+  }
+
+  const commentIndex = video.comments.findIndex(
+    (comment) => comment.id === commentId
+  );
+
+  if (commentIndex === -1) {
+    res.status(404).json({
+      message: "No comment with that id exists. Could not delete comment.",
+    });
+  }
+
+  const removedComment = video.comments.splice(commentIndex, 1);
+  fs.writeFileSync(process.env.DATA, JSON.stringify(videosData));
+  res.status(200).json(removedComment);
+});
+
 export default router;
