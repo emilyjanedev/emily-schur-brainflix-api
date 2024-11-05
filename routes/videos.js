@@ -4,7 +4,21 @@ import { v4 as uuidv4 } from "uuid";
 const router = express.Router();
 
 router.get("/", (req, res) => {
-  res.status(200).send("Get list of videos with id, title, channel, image");
+  const jsonData = fs.readFileSync("./data/videos.json", "utf8");
+  const videosData = JSON.parse(jsonData);
+  let videoList = [];
+
+  videosData.map((video) => {
+    const { id, title, channel, image } = video;
+    videoList.push({
+      id,
+      title,
+      channel,
+      image,
+    });
+  });
+
+  res.status(200).json(videoList);
 });
 
 router.post("/", (req, res) => {
