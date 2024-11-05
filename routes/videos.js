@@ -49,12 +49,19 @@ router.post("/", (req, res) => {
 });
 
 router.get("/:id", (req, res) => {
-  const videoId = req.params;
-  res
-    .status(200)
-    .send(
-      `Get video details for video with id of ${videoId}: entire video object`
-    );
+  const { id: requestVideoId } = req.params;
+  const jsonData = fs.readFileSync("./data/videos.json", "utf8");
+  const videosData = JSON.parse(jsonData);
+
+  const video = videosData.find((video) => video.id === requestVideoId);
+
+  if (video) {
+    res.status(200).json(video);
+  } else {
+    res.status(404).json({
+      message: `Video with id: ${requestVideoId} was not found.`,
+    });
+  }
 });
 
 export default router;
