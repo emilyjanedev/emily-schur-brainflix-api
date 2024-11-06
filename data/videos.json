@@ -41,7 +41,7 @@
     "image": "http://localhost:8080/images/image1.jpg ",
     "description": "Embark on a vicarious adventure through the captivating landscapes and vibrant cultures of Europe. This video promises a virtual journey that transcends borders. From the grandeur of historic landmarks to the charm of local gems, viewers will traverse the enchanting cities of Europe with a keen eye for cultural nuances and hidden treasures. Immerse yourself in the magic of faraway places and let me be your guide to the heart of each city.",
     "views": "809,635",
-    "likes": "400,058",
+    "likes": 3,
     "duration": "12:26",
     "video": "http://localhost:8080/videos/stream.mp4",
     "timestamp": 1690089462000,
@@ -57,7 +57,7 @@
         "id": "bf704c76-cba9-462e-ac0a-166315df756c",
         "name": "Taylor Nkoshi",
         "comment": "Your videos are a true escape for the soul. Watching this feels like taking a scenic stroll through the charming streets of Europe. Thank you for bringing the magic of travel to our screens!",
-        "likes": 0,
+        "likes": 2,
         "timestamp": 1690262262000
       },
       {

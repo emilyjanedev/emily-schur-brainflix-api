@@ -63,7 +63,6 @@ router.post("/", (req, res) => {
 
 router.get("/:id", (req, res) => {
   const { id: requestVideoId } = req.params;
-  const jsonData = fs.readFileSync(process.env.DATA, "utf8");
   const videosData = readData();
 
   const video = videosData.find((video) => video.id === requestVideoId);
@@ -75,6 +74,23 @@ router.get("/:id", (req, res) => {
       message: `Video with id: ${requestVideoId} was not found.`,
     });
   }
+});
+
+router.put("/:id/likes", (req, res) => {
+  const { id } = req.params;
+
+  const videosData = readData();
+  const likedVideo = videosData.find((video) => video.id === id);
+
+  if (!likedVideo) {
+    res
+      .status(404)
+      .json({ message: "No video with that id exists. Could not like video." });
+  }
+
+  likedVideo.likes += 1;
+  writeData(videosData);
+  res.status(201).json(likedVideo);
 });
 
 router.post("/:id/comments", (req, res) => {
@@ -159,7 +175,7 @@ router.put("/:videoId/comments/:commentId", (req, res) => {
     });
   }
 
-  likedComment.likes++;
+  likedComment.likes += 1;
   writeData(videosData);
 
   res.status(201).json(likedComment);
