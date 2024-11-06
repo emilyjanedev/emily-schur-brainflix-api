@@ -1,23 +1,9 @@
 import express from "express";
-import fs from "fs";
 import { v4 as uuidv4 } from "uuid";
+import { readData, writeData } from "../utils/dataUtils.js";
+import commentRoutes from "./comments.js";
+
 const router = express.Router();
-
-const readData = () => {
-  try {
-    return JSON.parse(fs.readFileSync(process.env.DATA, "utf8"));
-  } catch (error) {
-    throw new Error("Error reading data from file.");
-  }
-};
-
-const writeData = (data) => {
-  try {
-    fs.writeFileSync(process.env.DATA, JSON.stringify(data, null, 2));
-  } catch (error) {
-    throw new Error("Error writing data to file.");
-  }
-};
 
 router.get("/", (req, res) => {
   const videosData = readData();
@@ -93,92 +79,6 @@ router.put("/:id/likes", (req, res) => {
   res.status(201).json(likedVideo);
 });
 
-router.post("/:id/comments", (req, res) => {
-  if (Object.keys(req.body).length === 0) {
-    res.status(204).json({
-      message: "Request is missing request body. Could not post comment.",
-    });
-  }
-
-  const { name, comment } = req.body;
-  const { id: videoId } = req.params;
-
-  const newComment = {
-    id: uuidv4(),
-    name,
-    comment,
-    likes: 0,
-    timestamp: Date.now(),
-  };
-
-  const videosData = readData();
-  const video = videosData.find((video) => video.id === videoId);
-
-  if (!video) {
-    res.status(404).json({
-      message: "No video with that id exists. Unable to post comment.",
-    });
-  }
-
-  video.comments.push(newComment);
-  writeData(videosData);
-  res.status(201).json(newComment);
-});
-
-router.delete("/:videoId/comments/:commentId", (req, res) => {
-  const { videoId, commentId } = req.params;
-
-  const videosData = readData();
-  const video = videosData.find((video) => video.id === videoId);
-
-  if (!video) {
-    res.status(404).json({
-      message: "No video with that id exists. Unable to delete comment",
-    });
-  }
-
-  const commentIndex = video.comments.findIndex(
-    (comment) => comment.id === commentId
-  );
-
-  if (commentIndex === -1) {
-    res.status(404).json({
-      message: "No comment with that id exists. Could not delete comment.",
-    });
-  }
-
-  const removedComment = video.comments.splice(commentIndex, 1);
-  writeData(videosData);
-  res.status(200).json(removedComment);
-});
-
-router.put("/:videoId/comments/:commentId", (req, res) => {
-  const { videoId, commentId } = req.params;
-
-  const videosData = readData();
-  const video = videosData.find((video) => video.id === videoId);
-  console.log(video);
-
-  if (!video) {
-    res.status(404).json({
-      message: "No video with that id exists. Unable to like comment",
-    });
-  }
-
-  const likedComment = video.comments.find(
-    (comment) => comment.id === commentId
-  );
-
-  if (!likedComment) {
-    res.status(404).json({
-      message: "No comment with that id exists. Could not like comment.",
-    });
-  }
-
-  likedComment.likes += 1;
-  writeData(videosData);
-
-  res.status(201).json(likedComment);
-});
+router.use("/:id/comments", commentRoutes);
 
 export default router;
