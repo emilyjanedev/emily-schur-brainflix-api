@@ -136,4 +136,33 @@ router.delete("/:videoId/comments/:commentId", (req, res) => {
   res.status(200).json(removedComment);
 });
 
+router.put("/:videoId/comments/:commentId", (req, res) => {
+  const { videoId, commentId } = req.params;
+
+  const videosData = readData();
+  const video = videosData.find((video) => video.id === videoId);
+  console.log(video);
+
+  if (!video) {
+    res.status(404).json({
+      message: "No video with that id exists. Unable to like comment",
+    });
+  }
+
+  const likedComment = video.comments.find(
+    (comment) => comment.id === commentId
+  );
+
+  if (!likedComment) {
+    res.status(404).json({
+      message: "No comment with that id exists. Could not like comment.",
+    });
+  }
+
+  likedComment.likes++;
+  writeData(videosData);
+
+  res.status(201).json(likedComment);
+});
+
 export default router;
