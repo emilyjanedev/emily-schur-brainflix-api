@@ -29,13 +29,12 @@ router.post("/", (req, res) => {
     id: uuidv4(),
     title,
     channel: "Emily Jane",
-    image:
-      "https://unit-3-project-api-0a5620414506.herokuapp.com/images/image0.jpg",
+    image: "http://localhost:8080/images/image0.jpg",
     description,
-    views: 123456,
-    likes: 0,
+    views: "123,456",
+    likes: "0",
     duration: "4:01",
-    video: "https://unit-3-project-api-0a5620414506.herokuapp.com/stream",
+    video: "http://localhost:8080/videos/stream.mp4",
     timestamp: Date.now(),
     comments: [],
   };
@@ -74,7 +73,9 @@ router.put("/:id/likes", (req, res) => {
       .json({ message: "No video with that id exists. Could not like video." });
   }
 
-  likedVideo.likes += 1;
+  let likesNumber = parseInt(likedVideo.likes.split(",").join(""), 10);
+  likesNumber += 1;
+  likedVideo.likes = likesNumber.toLocaleString();
   writeData(videosData);
   res.status(201).json(likedVideo);
 });

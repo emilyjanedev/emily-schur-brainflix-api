@@ -6,7 +6,7 @@
     "image": "http://localhost:8080/images/image0.jpg",
     "description": "Explore the cutting-edge developments and predictions for Artificial Intelligence in the coming years. From revolutionary breakthroughs in machine learning to the ethical considerations influencing AI advancements, this exploration transcends the boundaries of mere speculation. Join us on a journey that navigates the intricate interplay between innovation, ethics, and the ever-evolving tech frontier.",
     "views": "980,544",
-    "likes": "22,479",
+    "likes": "22,496",
     "duration": "4:01",
     "video": "http://localhost:8080/videos/stream.mp4",
     "timestamp": 1691471862000,
@@ -32,7 +32,8 @@
         "likes": 1,
         "timestamp": 1691558262000
       }
-    ]
+    ],
+    "like": "NaN"
   },
   {
     "id": "c05b9a93-8682-4ab6-aff2-92ebb4bbfc14",
@@ -76,7 +77,7 @@
     "image": "http://localhost:8080/images/image2.jpg",
     "description": "Join Cornelia on a delectable journey as we unravel the culinary secrets of renowned chefs and hidden gems around the world. From exotic street food to Michelin-starred masterpieces, this video is a feast for the senses. Delve into the world of gastronomy and elevate your appreciation for the art of cooking. Get ready for a mouthwatering adventure that will leave you inspired to explore new flavors and cuisines.",
     "views": "1,261,703",
-    "likes": "729,753",
+    "likes": "729,754",
     "duration": "26:13",
     "video": "http://localhost:8080/videos/stream.mp4",
     "timestamp": 1700374662000,
@@ -136,6 +137,27 @@
         "comment": "The serene scenes are lovely, but I'm skeptical about its real-world applicability. Maybe some concrete examples of how it's worked for you and others would add more credibility. Open to seeing more evidence-based content.",
         "likes": 1,
         "timestamp": 1676269062000
+      },
+      {
+        "id": "30fa86bc-25a8-405a-abe6-bde65a434d14",
+        "name": "4th comment",
+        "comment": "Test",
+        "likes": 0,
+        "timestamp": 1730959211813
+      },
+      {
+        "id": "a4543f9f-1832-4dc5-a3d6-0ceee56a7608",
+        "name": "5 comments",
+        "comment": "tasdfs",
+        "likes": 0,
+        "timestamp": 1730959315758
+      },
+      {
+        "id": "86da27e8-bada-4d28-b3cd-b7370682255c",
+        "name": "Making sure this still works",
+        "comment": "Hello world",
+        "likes": 0,
+        "timestamp": 1730959447725
       }
     ]
   },
@@ -209,7 +231,7 @@
     "image": "http://localhost:8080/images/image6.jpg",
     "description": "Embark on a cosmic journey as we navigate the night sky, identifying constellations, planets, and celestial wonders. Whether you're a seasoned stargazer or a novice, this cosmic adventure promises to deepen your appreciation for the vastness above and inspire a newfound curiosity for the stars",
     "views": "252,796",
-    "likes": "4,905",
+    "likes": "4,906",
     "duration": "7:31",
     "video": "http://localhost:8080/videos/stream.mp4",
     "timestamp": 1692767862000,
@@ -292,5 +314,39 @@
         "timestamp": 1701584262000
       }
     ]
+  },
+  {
+    "id": "60763b6b-368f-4725-bc34-ccd8a116ff72",
+    "title": "Pete the Cat.",
+    "channel": "Emily Jane",
+    "image": "http://localhost:8080/images/image0.jpg",
+    "description": "A video about my cat that likes to eat his food and meow.",
+    "views": 123456,
+    "likes": "2",
+    "duration": "4:01",
+    "video": "http://localhost:8080/videos/stream.mp4",
+    "timestamp": 1730961322886,
+    "comments": [
+      {
+        "id": "1144d4fb-ac2f-45fd-91a3-aadfb81d0975",
+        "name": "Emily Schur",
+        "comment": "This cat is super cute! And holy moly does he love his food. Liked for his cute meows and littol paws.",
+        "likes": 0,
+        "timestamp": 1730961366363
+      }
+    ]
+  },
+  {
+    "id": "0b48b865-cc9a-45aa-9e30-56be756dc90b",
+    "title": "askldjfa;slf",
+    "channel": "Emily Jane",
+    "image": "http://localhost:8080/images/image0.jpg",
+    "description": "adsfnasjfa;s",
+    "views": "123,456",
+    "likes": "1",
+    "duration": "4:01",
+    "video": "http://localhost:8080/videos/stream.mp4",
+    "timestamp": 1730961419582,
+    "comments": []
   }
 ]
