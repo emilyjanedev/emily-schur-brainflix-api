@@ -19,7 +19,15 @@ router.get("/", (req, res) => {
     });
   });
 
-  res.status(200).json(videoList);
+  const page = parseInt(req.query.page) || 1;
+  const limit = 6;
+
+  const startIndex = (page - 1) * limit;
+  const endIndex = startIndex + limit;
+
+  const paginatedVideos = videoList.slice(startIndex, endIndex);
+
+  res.status(200).json(paginatedVideos);
 });
 
 router.post("/", (req, res) => {
