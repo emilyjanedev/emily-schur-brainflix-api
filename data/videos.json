@@ -302,76 +302,29 @@
     ]
   },
   {
-    "id": "6205e2a2-a658-4c6c-8569-64684c2c04bb",
-    "title": "This is a new video.",
+    "id": "c354e0e9-03e5-494d-8833-8e434533d55f",
+    "title": "A Life of Mindfulness and Serenity",
     "channel": "Emily Jane",
-    "image": "http://localhost:8080/images/image0.jpg",
-    "description": "It should have no comments, and no likes.",
-    "views": "123,456",
-    "likes": "1",
-    "duration": "4:01",
-    "video": "http://localhost:8080/videos/stream.mp4",
-    "timestamp": 1731035463172,
-    "comments": [
-      {
-        "id": "3efe7ce6-49c1-4f68-a2cb-5a4426728ea9",
-        "name": "I am the FIRST",
-        "comment": "First comment! WOOOOHOOOOO!",
-        "likes": 1,
-        "timestamp": 1731109662744
-      }
-    ]
-  },
-  {
-    "id": "868bcfa5-4cba-4f26-bd33-1ccb6742e99a",
-    "title": "Another test video.",
-    "channel": "Emily Jane",
-    "image": "http://localhost:8080/images/image0.jpg",
-    "description": "Anotha one",
+    "image": "http://localhost:8080/images/image3.jpeg",
+    "description": "Lern how to slow down, relax, be grateful, and be content.",
     "views": "123,456",
     "likes": "0",
     "duration": "4:01",
     "video": "http://localhost:8080/videos/stream.mp4",
-    "timestamp": 1731036519996,
+    "timestamp": 1731178031850,
     "comments": []
   },
   {
-    "id": "b4baa626-0e27-4a58-9c1b-542566e2876e",
-    "title": "Testing",
+    "id": "4de96d16-9fa1-4261-bf5b-dece7fda4f4a",
+    "title": "Testing after Refactor",
     "channel": "Emily Jane",
-    "image": "http://localhost:8080/images/image0.jpg",
-    "description": "123",
+    "image": "http://localhost:8080/images/image10.jpg",
+    "description": "Hopefully this still works",
     "views": "123,456",
     "likes": "0",
     "duration": "4:01",
     "video": "http://localhost:8080/videos/stream.mp4",
-    "timestamp": 1731039397201,
-    "comments": []
-  },
-  {
-    "id": "37508927-c219-46e3-8314-60adf9bf57ed",
-    "title": "Test 432",
-    "channel": "Emily Jane",
-    "image": "http://localhost:8080/images/image0.jpg",
-    "description": "457890-",
-    "views": "123,456",
-    "likes": "17",
-    "duration": "4:01",
-    "video": "http://localhost:8080/videos/stream.mp4",
-    "timestamp": 1731042618066,
-    "comments": []
-  },
-  {
-    "id": "08905a73-4a99-46dc-b1fb-71e858fec318",
-    "title": "Test Video",
-    "channel": "Emily Jane",
-    "image": "http://localhost:8080/images/image0.jpg",
-    "description": "Test Video",
-    "views": "123,456",
-    "likes": "0",
-    "duration": "4:01",
-    "video": "http://localhost:8080/videos/stream.mp4",
-    "timestamp": 1731105668436,
+    "timestamp": 1731180332576,
     "comments": []
   }
 ]

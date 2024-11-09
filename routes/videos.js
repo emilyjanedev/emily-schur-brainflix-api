@@ -1,9 +1,24 @@
 import express from "express";
 import { v4 as uuidv4 } from "uuid";
 import { readData, writeData } from "../utils/dataUtils.js";
+import multer from "multer";
+import path from "path";
 import commentRoutes from "./comments.js";
 
 const router = express.Router();
+
+const storage = multer.diskStorage({
+  destination: (_req, _file, cb) => {
+    cb(null, "./public/images");
+  },
+  filename: (_req, file, cb) => {
+    const extname = path.extname(file.originalname);
+    const basename = path.basename(file.originalname, extname);
+    cb(null, `${basename}${extname}`);
+  },
+});
+
+const upload = multer({ storage: storage });
 
 router.get("/", (_req, res) => {
   const videosData = readData();
@@ -22,14 +37,17 @@ router.get("/", (_req, res) => {
   res.status(200).json(videoList);
 });
 
-router.post("/", (req, res) => {
+router.post("/", upload.single("fileData"), (req, res) => {
   const { title, description } = req.body;
+  const fileData = req.file;
 
   const newVideo = {
     id: uuidv4(),
     title,
     channel: "Emily Jane",
-    image: "http://localhost:8080/images/image0.jpg",
+    image: fileData
+      ? `http://localhost:8080/images/${fileData.filename}`
+      : "http://localhost:8080/images/image0.jpg",
     description,
     views: "123,456",
     likes: "0",
