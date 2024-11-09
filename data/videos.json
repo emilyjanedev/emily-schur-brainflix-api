@@ -6,7 +6,7 @@
     "image": "http://localhost:8080/images/image0.jpg",
     "description": "Explore the cutting-edge developments and predictions for Artificial Intelligence in the coming years. From revolutionary breakthroughs in machine learning to the ethical considerations influencing AI advancements, this exploration transcends the boundaries of mere speculation. Join us on a journey that navigates the intricate interplay between innovation, ethics, and the ever-evolving tech frontier.",
     "views": "980,544",
-    "likes": "22,496",
+    "likes": "22,505",
     "duration": "4:01",
     "video": "http://localhost:8080/videos/stream.mp4",
     "timestamp": 1691471862000,
@@ -15,21 +15,21 @@
         "id": "35bba08b-1b51-4153-ba7e-6da76b5ec1b9",
         "name": "Noah Duncan",
         "comment": "Your insights into the future of AI are enlightening! The intersection of technology and ethics is particularly thought-provoking. Keep us updated on the tech front!",
-        "likes": 3,
+        "likes": 17,
         "timestamp": 1691731062000
       },
       {
         "id": "091de676-61af-4ee6-90de-3a7a53af7521",
         "name": "Terry Wong",
         "comment": "This video is a fantastic overview of the AI landscape. Your ability to distill complex concepts into digestible content is impressive. Can't wait for more tech insights!",
-        "likes": 0,
+        "likes": 7,
         "timestamp": 1691644662000
       },
       {
         "id": "66b7d3c7-4023-47f1-a02c-520c9ca187a6",
         "name": "Janice Rodriguez",
         "comment": "Your channel is my go-to source for staying updated on tech trends. The exploration of AI's future implications is both informative and exciting. Kudos on another excellent video!",
-        "likes": 1,
+        "likes": 7,
         "timestamp": 1691558262000
       }
     ],
@@ -42,7 +42,7 @@
     "image": "http://localhost:8080/images/image1.jpg ",
     "description": "Embark on a vicarious adventure through the captivating landscapes and vibrant cultures of Europe. This video promises a virtual journey that transcends borders. From the grandeur of historic landmarks to the charm of local gems, viewers will traverse the enchanting cities of Europe with a keen eye for cultural nuances and hidden treasures. Immerse yourself in the magic of faraway places and let me be your guide to the heart of each city.",
     "views": "809,635",
-    "likes": 3,
+    "likes": "3",
     "duration": "12:26",
     "video": "http://localhost:8080/videos/stream.mp4",
     "timestamp": 1690089462000,
@@ -86,14 +86,14 @@
         "id": "7ba106bf-e74a-4c21-b59e-c485a30eea45",
         "name": "Giovana Silva",
         "comment": "Can't wait to try some of these gastronomic delights in my own kitchen. Keep those delicious discoveries coming!",
-        "likes": 0,
+        "likes": 1,
         "timestamp": 1700633862000
       },
       {
         "id": "921f0e8d-f9d1-44db-b4a2-a2718339891e",
         "name": "Daniel Lesage",
         "comment": "Your exploration of various cuisines and the intricate details behind each dish is both informative and mouthwatering. I've learned so much about the artistry of cooking.",
-        "likes": 0,
+        "likes": 1,
         "timestamp": 1700547462000
       },
       {
@@ -137,27 +137,6 @@
         "comment": "The serene scenes are lovely, but I'm skeptical about its real-world applicability. Maybe some concrete examples of how it's worked for you and others would add more credibility. Open to seeing more evidence-based content.",
         "likes": 1,
         "timestamp": 1676269062000
-      },
-      {
-        "id": "30fa86bc-25a8-405a-abe6-bde65a434d14",
-        "name": "4th comment",
-        "comment": "Test",
-        "likes": 0,
-        "timestamp": 1730959211813
-      },
-      {
-        "id": "a4543f9f-1832-4dc5-a3d6-0ceee56a7608",
-        "name": "5 comments",
-        "comment": "tasdfs",
-        "likes": 0,
-        "timestamp": 1730959315758
-      },
-      {
-        "id": "86da27e8-bada-4d28-b3cd-b7370682255c",
-        "name": "Making sure this still works",
-        "comment": "Hello world",
-        "likes": 0,
-        "timestamp": 1730959447725
       }
     ]
   },
@@ -231,7 +210,7 @@
     "image": "http://localhost:8080/images/image6.jpg",
     "description": "Embark on a cosmic journey as we navigate the night sky, identifying constellations, planets, and celestial wonders. Whether you're a seasoned stargazer or a novice, this cosmic adventure promises to deepen your appreciation for the vastness above and inspire a newfound curiosity for the stars",
     "views": "252,796",
-    "likes": "4,906",
+    "likes": "4,907",
     "duration": "7:31",
     "video": "http://localhost:8080/videos/stream.mp4",
     "timestamp": 1692767862000,
@@ -266,7 +245,7 @@
     "image": "http://localhost:8080/images/image7.jpg",
     "description": "Famous Paintings and Their Stories. This illuminating video goes beyond the canvas, exploring the profound narratives and hidden meanings behind renowned masterpieces. From the strokes of iconic painters to the emotions embedded in each artwork, viewers are invited to embark on a visual and intellectual journey through the realms of art history.",
     "views": "129,984",
-    "likes": "62,552",
+    "likes": "62,556",
     "duration": "26:52",
     "video": "http://localhost:8080/videos/stream.mp4",
     "timestamp": 1698211062000,
@@ -312,41 +291,87 @@
         "comment": "Your documentary on the history and technology of trains is a delightful treat for railway enthusiasts like me. The attention to detail and the chronological journey through time make it an educational and entertaining experience.",
         "likes": 0,
         "timestamp": 1701584262000
-      }
-    ]
-  },
-  {
-    "id": "60763b6b-368f-4725-bc34-ccd8a116ff72",
-    "title": "Pete the Cat.",
-    "channel": "Emily Jane",
-    "image": "http://localhost:8080/images/image0.jpg",
-    "description": "A video about my cat that likes to eat his food and meow.",
-    "views": 123456,
-    "likes": "2",
-    "duration": "4:01",
-    "video": "http://localhost:8080/videos/stream.mp4",
-    "timestamp": 1730961322886,
-    "comments": [
+      },
       {
-        "id": "1144d4fb-ac2f-45fd-91a3-aadfb81d0975",
-        "name": "Emily Schur",
-        "comment": "This cat is super cute! And holy moly does he love his food. Liked for his cute meows and littol paws.",
-        "likes": 0,
-        "timestamp": 1730961366363
+        "id": "53ee6ee2-4017-4116-a4c1-8bceae00dac6",
+        "name": "Testing adding a new comment!",
+        "comment": "Woooooohooo!",
+        "likes": 1,
+        "timestamp": 1731109004497
       }
     ]
   },
   {
-    "id": "0b48b865-cc9a-45aa-9e30-56be756dc90b",
-    "title": "askldjfa;slf",
+    "id": "6205e2a2-a658-4c6c-8569-64684c2c04bb",
+    "title": "This is a new video.",
     "channel": "Emily Jane",
     "image": "http://localhost:8080/images/image0.jpg",
-    "description": "adsfnasjfa;s",
+    "description": "It should have no comments, and no likes.",
     "views": "123,456",
     "likes": "1",
     "duration": "4:01",
     "video": "http://localhost:8080/videos/stream.mp4",
-    "timestamp": 1730961419582,
+    "timestamp": 1731035463172,
+    "comments": [
+      {
+        "id": "3efe7ce6-49c1-4f68-a2cb-5a4426728ea9",
+        "name": "I am the FIRST",
+        "comment": "First comment! WOOOOHOOOOO!",
+        "likes": 1,
+        "timestamp": 1731109662744
+      }
+    ]
+  },
+  {
+    "id": "868bcfa5-4cba-4f26-bd33-1ccb6742e99a",
+    "title": "Another test video.",
+    "channel": "Emily Jane",
+    "image": "http://localhost:8080/images/image0.jpg",
+    "description": "Anotha one",
+    "views": "123,456",
+    "likes": "0",
+    "duration": "4:01",
+    "video": "http://localhost:8080/videos/stream.mp4",
+    "timestamp": 1731036519996,
+    "comments": []
+  },
+  {
+    "id": "b4baa626-0e27-4a58-9c1b-542566e2876e",
+    "title": "Testing",
+    "channel": "Emily Jane",
+    "image": "http://localhost:8080/images/image0.jpg",
+    "description": "123",
+    "views": "123,456",
+    "likes": "0",
+    "duration": "4:01",
+    "video": "http://localhost:8080/videos/stream.mp4",
+    "timestamp": 1731039397201,
+    "comments": []
+  },
+  {
+    "id": "37508927-c219-46e3-8314-60adf9bf57ed",
+    "title": "Test 432",
+    "channel": "Emily Jane",
+    "image": "http://localhost:8080/images/image0.jpg",
+    "description": "457890-",
+    "views": "123,456",
+    "likes": "17",
+    "duration": "4:01",
+    "video": "http://localhost:8080/videos/stream.mp4",
+    "timestamp": 1731042618066,
+    "comments": []
+  },
+  {
+    "id": "08905a73-4a99-46dc-b1fb-71e858fec318",
+    "title": "Test Video",
+    "channel": "Emily Jane",
+    "image": "http://localhost:8080/images/image0.jpg",
+    "description": "Test Video",
+    "views": "123,456",
+    "likes": "0",
+    "duration": "4:01",
+    "video": "http://localhost:8080/videos/stream.mp4",
+    "timestamp": 1731105668436,
     "comments": []
   }
 ]

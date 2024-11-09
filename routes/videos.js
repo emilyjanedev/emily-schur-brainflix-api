@@ -5,7 +5,7 @@ import commentRoutes from "./comments.js";
 
 const router = express.Router();
 
-router.get("/", (req, res) => {
+router.get("/", (_req, res) => {
   const videosData = readData();
   let videoList = [];
 
@@ -19,15 +19,7 @@ router.get("/", (req, res) => {
     });
   });
 
-  const page = parseInt(req.query.page) || 1;
-  const limit = 6;
-
-  const startIndex = (page - 1) * limit;
-  const endIndex = startIndex + limit;
-
-  const paginatedVideos = videoList.slice(startIndex, endIndex);
-
-  res.status(200).json(paginatedVideos);
+  res.status(200).json(videoList);
 });
 
 router.post("/", (req, res) => {
