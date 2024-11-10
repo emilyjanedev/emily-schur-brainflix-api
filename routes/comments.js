@@ -22,7 +22,7 @@ router.post("/", (req, res) => {
     timestamp: Date.now(),
   };
 
-  const videosData = readData();
+  const videosData = readData("DATA");
   const video = videosData.find((video) => video.id === videoId);
 
   if (!video) {
@@ -32,14 +32,14 @@ router.post("/", (req, res) => {
   }
 
   video.comments.push(newComment);
-  writeData(videosData);
+  writeData(videosData, "DATA");
   res.status(201).json(newComment);
 });
 
 router.delete("/:commentId", (req, res) => {
   const { id: videoId, commentId } = req.params;
 
-  const videosData = readData();
+  const videosData = readData("DATA");
   const video = videosData.find((video) => video.id === videoId);
 
   if (!video) {
@@ -59,14 +59,14 @@ router.delete("/:commentId", (req, res) => {
   }
 
   const removedComment = video.comments.splice(commentIndex, 1);
-  writeData(videosData);
+  writeData(videosData, "DATA");
   res.status(200).json(removedComment);
 });
 
 router.put("/:commentId", (req, res) => {
   const { id: videoId, commentId } = req.params;
 
-  const videosData = readData();
+  const videosData = readData("DATA");
   const video = videosData.find((video) => video.id === videoId);
 
   if (!video) {
@@ -86,7 +86,7 @@ router.put("/:commentId", (req, res) => {
   }
 
   likedComment.likes += 1;
-  writeData(videosData);
+  writeData(videosData, "DATA");
 
   res.status(201).json(likedComment);
 });

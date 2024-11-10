@@ -21,7 +21,7 @@ const storage = multer.diskStorage({
 const upload = multer({ storage: storage });
 
 router.get("/", (_req, res) => {
-  const videosData = readData();
+  const videosData = readData("DATA");
   let videoList = [];
 
   videosData.map((video) => {
@@ -57,16 +57,16 @@ router.post("/", upload.single("fileData"), (req, res) => {
     comments: [],
   };
 
-  let videosData = readData();
+  let videosData = readData("DATA");
   videosData.push(newVideo);
-  writeData(videosData);
+  writeData(videosData, "DATA");
 
   res.status(201).json(newVideo);
 });
 
 router.get("/:id", (req, res) => {
   const { id: requestVideoId } = req.params;
-  const videosData = readData();
+  const videosData = readData("DATA");
 
   const video = videosData.find((video) => video.id === requestVideoId);
 
@@ -82,7 +82,7 @@ router.get("/:id", (req, res) => {
 router.put("/:id/likes", (req, res) => {
   const { id } = req.params;
 
-  const videosData = readData();
+  const videosData = readData("DATA");
   const likedVideo = videosData.find((video) => video.id === id);
 
   if (!likedVideo) {
@@ -94,7 +94,7 @@ router.put("/:id/likes", (req, res) => {
   let likesNumber = parseInt(likedVideo.likes.split(",").join(""), 10);
   likesNumber += 1;
   likedVideo.likes = likesNumber.toLocaleString();
-  writeData(videosData);
+  writeData(videosData, "DATA");
   res.status(201).json(likedVideo);
 });
 

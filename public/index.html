@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>BrainFlix API Documentation</title>
+    <style>
+      * {
+        font-family: "Avenir Next", Helvetica, sans-serif;
+        color: #323232;
+      }
+      body {
+        padding: 20px;
+        line-height: 1.6;
+      }
+      h1,
+      h2,
+      h3,
+      h4 {
+        color: #0095ff;
+        margin: 10px 0;
+      }
+      h1 {
+        font-size: 2rem;
+      }
+      h2 {
+        color: #323232;
+        font-size: 1.6rem;
+      }
+      h3 {
+        font-size: 1.4rem;
+        color: #0065ad;
+      }
+      h4 {
+        font-size: 1.2rem;
+        color: #444;
+      }
+
+      section {
+        border-bottom: 2px solid #e1e1e1;
+        padding-bottom: 10px;
+        margin-bottom: 20px;
+      }
+
+      ul {
+        padding-left: 20px;
+        margin: 10px 0;
+      }
+      li {
+        margin-bottom: 8px;
+      }
+
+      code,
+      pre code {
+        font-family: "Courier New", Courier, monospace;
+        color: #0095ff;
+        padding: 2px 6px;
+      }
+      pre {
+        background-color: #f9f9f9;
+        padding: 10px;
+        border: 1px solid #e1e1e1;
+        border-radius: 5px;
+        overflow-x: auto;
+        margin-top: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>BrainFlix API Documentation</h1>
+    <section>
+      <h2>Overview</h2>
+      <ul>
+        <li>
+          The url for the API is
+          <code>http://localhost:8080/</code> unless changed on your local
+          environment.
+        </li>
+        <li>
+          Every "video" object will contain unique details however the video
+          link will be the same.
+        </li>
+        <li>
+          The API comes seeded with a list of default videos. Each default video
+          will contain three default comments.
+        </li>
+      </ul>
+    </section>
+    <section>
+      <h2 id="authentication">Authentication</h2>
+      <ul>
+        <li>
+          To register with the API and get a key, make a GET request to
+          <code>/register</code>
+          <ul>
+            <li>
+              You can do this with the browser and you only need to do it once.
+            </li>
+            <li>
+              Store the key in a global variable in your front-end environment.
+            </li>
+          </ul>
+        </li>
+        <li>
+          You must append <code>?api_key=&lt;your_api_key_here&gt;</code> to
+          each of your API request URLs (except for <code>/register</code>)
+        </li>
+      </ul>
+    </section>
+    <section>
+      <h2 id="api-errors">API Errors</h2>
+      <ul>
+        <li>
+          This API may return a 400, 401, or 404 error
+          <li id="example-error-body">Example error body:</li>
+          <pre><code class="lang-json">
+  {
+    <span class="hljs-attr">"message"</span>: <span class="hljs-string">"No video with that id exists"</span>
+  }
+    </code></pre>
+        </li>
+      </ul>
+    </section>
+    <section>
+      <h2 id="routes">Routes</h2>
+      <section>
+        <h3 id="get-videos-">GET <code>/videos</code></h3>
+        <ul>
+          <li>Returns an array of video objects</li>
+          <li>
+            Contains only enough information to display in side bar
+            <li id="response-body-example">Response body example:</li>
+            <pre><code class="lang-json">
+[
+  {
+    <span class="hljs-attr">"id"</span>: <span class="hljs-string">"84e96018-4022-434e-80bf-000ce4cd12b8"</span>,
+    <span class="hljs-attr">"title"</span>: <span class="hljs-string">"The Future of Artificial Intelligence"</span>,
+    <span class="hljs-attr">"channel"</span>: <span class="hljs-string">"Aiden Thompson"</span>,
+    <span class="hljs-attr">"image"</span>: <span class="hljs-string">"http://localhost:8080/images/image0.jpg"</span> 
+  },
+  {
+    <span class="hljs-attr">"id"</span>: <span class="hljs-string">"c05b9a93-8682-4ab6-aff2-92ebb4bbfc14"</span>,
+    <span class="hljs-attr">"title"</span>: <span class="hljs-string">"Exploring Cities of Europe"</span>,
+    <span class="hljs-attr">"channel"</span>: <span class="hljs-string">"Maria Aziz"</span>,
+    <span class="hljs-attr">"image"</span>: <span class="hljs-string">"http://localhost:8080/images/image1.jpg"</span>
+  }
+]
+
+</code></pre>
+          </li>
+        </ul>
+      </section>
+      <h3>POST <code>/videos</code></h3>
+      <ul>
+        <li>Creates a new video.</li>
+        <li>
+          Post body example:
+          <pre><code>
+  {
+    <span class="hljs-attr">"title"</span>: <span class="hljs-string">"Day in the Life of a Graphic Designer"</span>,
+    <span class="hljs-attr">"description"</span>: <span class="hljs-string">"Come along with me on a day in my life. See what it's like to work as a graphic designer!"</span>
+    <span class="hljs-attr">"fileData"</span>: <span class="hljs-string">"files[0]"</span>
+  }
+    </code></pre>
+        </li>
+        <li>
+          Example response body:
+          <pre><code class="lang-json">
+  {
+    <span class="hljs-attr">"id"</span>: <span class="hljs-string">"84e96018-4022-434e-80bf-000ce4cd12b8"</span>,
+    <span class="hljs-attr">"title"</span>: <span class="hljs-string">"Day in the Life of a Graphic Designer"</span>,
+    <span class="hljs-attr">"channel"</span>: <span class="hljs-string">"Emily Jane"</span>,
+    <span class="hljs-attr">"image"</span>: <span class="hljs-string">"http://localhost:8080/images/image0.jpg"</span>,
+    <span class="hljs-attr">"description"</span>: <span class="hljs-string">"Come along with me on a day in my life. See what it's like to work as a graphic designer!"</span>,
+    <span class="hljs-attr">"views"</span>: <span class="hljs-string">"980,544"</span>,
+    <span class="hljs-attr">"likes"</span>: <span class="hljs-string">"0"</span>,
+    <span class="hljs-attr">"duration"</span>: <span class="hljs-string">"4:01"</span>,
+    <span class="hljs-attr">"video"</span>: <span class="hljs-string">"http://localhost:8080/stream"</span>,
+    <span class="hljs-attr">"timestamp"</span>: <span class="hljs-number">1691471862000</span>,
+    <span class="hljs-attr">"comments"</span>: []
+  }
+          </code></pre>
+        </li>
+      </ul>
+    </section>
+    <section>
+      <h3 id="get-videos-id-">GET <code>/videos/:id</code></h3>
+      <ul>
+        <li>
+          <code>:id</code> must be swapped out with the id of a video as found
+          in the list of videos.
+        </li>
+        <li>
+          Returns a detailed object of a single video.
+          <ul>
+            <li>Details include the list of comments for that video.</li>
+          </ul>
+        </li>
+        <li>
+          Example response body:
+          <pre><code class="lang-json">
+  {
+    <span class="hljs-attr">"id"</span>: <span class="hljs-string">"84e96018-4022-434e-80bf-000ce4cd12b8"</span>,
+    <span class="hljs-attr">"title"</span>: <span class="hljs-string">"The Future of Artificial Intelligence"</span>,
+    <span class="hljs-attr">"channel"</span>: <span class="hljs-string">"Aiden Thompson"</span>,
+    <span class="hljs-attr">"image"</span>: <span class="hljs-string">"http://localhost:8080/images/image0.jpg"</span>,
+    <span class="hljs-attr">"description"</span>: <span class="hljs-string">"Explore the cutting-edge developments and predictions for Artificial Intelligence in the coming years. From revolutionary breakthroughs in machine learning to the ethical considerations influencing AI advancements, this exploration transcends the boundaries of mere speculation. Join us on a journey that navigates the intricate interplay between innovation, ethics, and the ever-evolving tech frontier."</span>,
+    <span class="hljs-attr">"views"</span>: <span class="hljs-string">"980,544"</span>,
+    <span class="hljs-attr">"likes"</span>: <span class="hljs-string">"22,479"</span>,
+    <span class="hljs-attr">"duration"</span>: <span class="hljs-string">"4:01"</span>,
+    <span class="hljs-attr">"video"</span>: <span class="hljs-string">"http://localhost:8080/stream"</span>,
+    <span class="hljs-attr">"timestamp"</span>: <span class="hljs-number">1691471862000</span>,
+    <span class="hljs-attr">"comments"</span>: [
+        {
+            <span class="hljs-attr">"name"</span>: <span class="hljs-string">"Noah Duncan"</span>,
+            <span class="hljs-attr">"comment"</span>: <span class="hljs-string">"Your insights into the future of AI are enlightening! The intersection of technology and ethics is particularly thought-provoking. Keep us updated on the tech front!"</span>,
+            <span class="hljs-attr">"id"</span>: <span class="hljs-string">"35bba08b-1b51-4153-ba7e-6da76b5ec1b9"</span>,
+            <span class="hljs-attr">"likes"</span>: <span class="hljs-number">0</span>,
+            <span class="hljs-attr">"timestamp"</span>: <span class="hljs-number">1691731062000</span>
+        },
+        {
+            <span class="hljs-attr">"name"</span>: <span class="hljs-string">"Terry Wong"</span>,
+            <span class="hljs-attr">"comment"</span>: <span class="hljs-string">"This video is a fantastic overview of the AI landscape. Your ability to distill complex concepts into digestible content is impressive. Can't wait for more tech insights!"</span>,
+            <span class="hljs-attr">"id"</span>: <span class="hljs-string">"091de676-61af-4ee6-90de-3a7a53af7521"</span>,
+            <span class="hljs-attr">"likes"</span>: <span class="hljs-number">0</span>,
+            <span class="hljs-attr">"timestamp"</span>: <span class="hljs-number">1691644662000</span>
+        },
+        {
+            <span class="hljs-attr">"name"</span>: <span class="hljs-string">"Janice Rodriguez"</span>,
+            <span class="hljs-attr">"comment"</span>: <span class="hljs-string">"Your channel is my go-to source for staying updated on tech trends. The exploration of AI's future implications is both informative and exciting. Kudos on another excellent video!"</span>,
+            <span class="hljs-attr">"id"</span>: <span class="hljs-string">"66b7d3c7-4023-47f1-a02c-520c9ca187a6"</span>,
+            <span class="hljs-attr">"likes"</span>: <span class="hljs-number">1</span>,
+            <span class="hljs-attr">"timestamp"</span>: <span class="hljs-number">1691558262000</span>
+        }
+    ] 
+  }
+</code></pre>
+        </li>
+      </ul>
+    </section>
+    <h3 id="get-videos-id-">PUT <code>/videos/:id/likes</code></h3>
+    <ul>
+      <li>
+        <code>:id</code> must be swapped out with the id of a video as found in
+        the list of videos.
+      </li>
+      <li>
+        Likes the given video and returns it in the response body.
+        <ul>
+          <li>Details include the list of comments for that video.</li>
+        </ul>
+      </li>
+      <li>
+        Example response body:
+        <pre><code class="lang-json">
+  {
+    <span class="hljs-attr">"id"</span>: <span class="hljs-string">"84e96018-4022-434e-80bf-000ce4cd12b8"</span>,
+    <span class="hljs-attr">"title"</span>: <span class="hljs-string">"The Future of Artificial Intelligence"</span>,
+    <span class="hljs-attr">"channel"</span>: <span class="hljs-string">"Aiden Thompson"</span>,
+    <span class="hljs-attr">"image"</span>: <span class="hljs-string">"http://localhost:8080/images/image0.jpg"</span>,
+    <span class="hljs-attr">"description"</span>: <span class="hljs-string">"Explore the cutting-edge developments and predictions for Artificial Intelligence in the coming years. From revolutionary breakthroughs in machine learning to the ethical considerations influencing AI advancements, this exploration transcends the boundaries of mere speculation. Join us on a journey that navigates the intricate interplay between innovation, ethics, and the ever-evolving tech frontier."</span>,
+    <span class="hljs-attr">"views"</span>: <span class="hljs-string">"980,544"</span>,
+    <span class="hljs-attr">"likes"</span>: <span class="hljs-string">"22,479"</span>,
+    <span class="hljs-attr">"duration"</span>: <span class="hljs-string">"4:01"</span>,
+    <span class="hljs-attr">"video"</span>: <span class="hljs-string">"http://localhost:8080/stream"</span>,
+    <span class="hljs-attr">"timestamp"</span>: <span class="hljs-number">1691471862000</span>,
+    <span class="hljs-attr">"comments"</span>: [
+        {
+            <span class="hljs-attr">"name"</span>: <span class="hljs-string">"Noah Duncan"</span>,
+            <span class="hljs-attr">"comment"</span>: <span class="hljs-string">"Your insights into the future of AI are enlightening! The intersection of technology and ethics is particularly thought-provoking. Keep us updated on the tech front!"</span>,
+            <span class="hljs-attr">"id"</span>: <span class="hljs-string">"35bba08b-1b51-4153-ba7e-6da76b5ec1b9"</span>,
+            <span class="hljs-attr">"likes"</span>: <span class="hljs-number">0</span>,
+            <span class="hljs-attr">"timestamp"</span>: <span class="hljs-number">1691731062000</span>
+        },
+        {
+            <span class="hljs-attr">"name"</span>: <span class="hljs-string">"Terry Wong"</span>,
+            <span class="hljs-attr">"comment"</span>: <span class="hljs-string">"This video is a fantastic overview of the AI landscape. Your ability to distill complex concepts into digestible content is impressive. Can't wait for more tech insights!"</span>,
+            <span class="hljs-attr">"id"</span>: <span class="hljs-string">"091de676-61af-4ee6-90de-3a7a53af7521"</span>,
+            <span class="hljs-attr">"likes"</span>: <span class="hljs-number">0</span>,
+            <span class="hljs-attr">"timestamp"</span>: <span class="hljs-number">1691644662000</span>
+        },
+        {
+            <span class="hljs-attr">"name"</span>: <span class="hljs-string">"Janice Rodriguez"</span>,
+            <span class="hljs-attr">"comment"</span>: <span class="hljs-string">"Your channel is my go-to source for staying updated on tech trends. The exploration of AI's future implications is both informative and exciting. Kudos on another excellent video!"</span>,
+            <span class="hljs-attr">"id"</span>: <span class="hljs-string">"66b7d3c7-4023-47f1-a02c-520c9ca187a6"</span>,
+            <span class="hljs-attr">"likes"</span>: <span class="hljs-number">1</span>,
+            <span class="hljs-attr">"timestamp"</span>: <span class="hljs-number">1691558262000</span>
+        }
+    ] 
+  }
+</code></pre>
+      </li>
+    </ul>
+    <section>
+      <section>
+        <h3 id="post-videos-id-comments-">
+          POST <code>/videos/:id/comments</code>
+        </h3>
+        <ul>
+          <li>
+            <code>:id</code> must be swapped out with the numeric id of a video
+            as found in the list of videos.
+          </li>
+          <li>Creates a new comment for a specific video.</li>
+          <li>
+            Post body example:
+            <pre><code>
+  {
+    <span class="hljs-attr">"name"</span>: <span class="hljs-string">"Trudy Jankowski"</span>,
+    <span class="hljs-attr">"comment"</span>: <span class="hljs-string">"I really enjoyed this video! Thanks for posting"</span>
+  }
+    </code></pre>
+          </li>
+          <li>
+            Response body example:
+            <pre><code>
+  {
+    <span class="hljs-attr">"id"</span>: <span class="hljs-number">ade82e25-6c87-4403-ba35-47bdff93a51c</span>,
+    <span class="hljs-attr">"name"</span>: <span class="hljs-string">"Maria Aziz"</span>,
+    <span class="hljs-attr">"comment"</span>: <span class="hljs-string">"Your travel diaries are like a passport to wanderlust! Each city comes alive through your lens, making me feel like I'm right there with you. Your storytelling captures the essence of these enchanting places, igniting a desire to explore Europe even more. Can't wait for the next adventure!"</span>,
+    <span class="hljs-attr">"timestamp"</span>: <span class="hljs-number">1690348662000</span>
+    <span class="hljs-attr">"likes"</span>: <span class="hljs-number">0</span>
+  }
+    </code></pre>
+          </li>
+        </ul>
+      </section>
+      <section>
+        <h3 id="delete-videos-videoid-comments-commentid-">
+          DELETE <code>/videos/:videoId/comments/:commentId</code>
+        </h3>
+        <ul>
+          <li>
+            Deletes the given comment and returns it in the response body.
+          </li>
+          <li>
+            <code>:videoId</code> must be swapped out with the numeric id of a
+            video as found in the list of videos.
+          </li>
+          <li>
+            <code>:commentId</code> must be swapped out with the numeric id of a
+            comment as found in the list of comments for the given video.
+          </li>
+          <li>
+            Response body example:
+            <pre><code>
+  {
+    <span class="hljs-attr">"id"</span>: <span class="hljs-number">ade82e25-6c87-4403-ba35-47bdff93a51c</span>,
+    <span class="hljs-attr">"name"</span>: <span class="hljs-string">"Maria Aziz"</span>,
+    <span class="hljs-attr">"comment"</span>: <span class="hljs-string">"Your travel diaries are like a passport to wanderlust! Each city comes alive through your lens, making me feel like I'm right there with you. Your storytelling captures the essence of these enchanting places, igniting a desire to explore Europe even more. Can't wait for the next adventure!"</span>,
+    <span class="hljs-attr">"timestamp"</span>: <span class="hljs-number">1690348662000</span>
+    <span class="hljs-attr">"likes"</span>: <span class="hljs-number">0</span>
+  }
+    </code></pre>
+          </li>
+        </ul>
+      </section>
+      <h3 id="delete-videos-videoid-comments-commentid-">
+        PUT <code>/videos/:videoId/comments/:commentId</code>
+      </h3>
+      <ul>
+        <li>Likes the given comment and returns it in the response body.</li>
+        <li>
+          <code>:videoId</code> must be swapped out with the numeric id of a
+          video as found in the list of videos.
+        </li>
+        <li>
+          <code>:commentId</code> must be swapped out with the numeric id of a
+          comment as found in the list of comments for the given video.
+        </li>
+        <li>
+          Response body example:
+          <pre><code>
+  {
+    <span class="hljs-attr">"id"</span>: <span class="hljs-number">ade82e25-6c87-4403-ba35-47bdff93a51c</span>,
+    <span class="hljs-attr">"name"</span>: <span class="hljs-string">"Maria Aziz"</span>,
+    <span class="hljs-attr">"comment"</span>: <span class="hljs-string">"Your travel diaries are like a passport to wanderlust! Each city comes alive through your lens, making me feel like I'm right there with you. Your storytelling captures the essence of these enchanting places, igniting a desire to explore Europe even more. Can't wait for the next adventure!"</span>,
+    <span class="hljs-attr">"timestamp"</span>: <span class="hljs-number">1690348662000</span>
+    <span class="hljs-attr">"likes"</span>: <span class="hljs-number">0</span>
+  }
+</code></pre>
+        </li>
+      </ul>
+    </section>
+  </body>
+</html>

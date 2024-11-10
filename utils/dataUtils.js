@@ -1,16 +1,24 @@
 import fs from "fs";
 
-const readData = () => {
+const readData = (file) => {
   try {
-    return JSON.parse(fs.readFileSync(process.env.DATA, "utf8"));
+    return JSON.parse(
+      fs.readFileSync(
+        file === "DATA" ? process.env.DATA : process.env.KEYS,
+        "utf8"
+      )
+    );
   } catch (error) {
     throw new Error("Error reading data from file.");
   }
 };
 
-const writeData = (data) => {
+const writeData = (data, file) => {
   try {
-    fs.writeFileSync(process.env.DATA, JSON.stringify(data, null, 2));
+    fs.writeFileSync(
+      file === "DATA" ? process.env.DATA : process.env.KEYS,
+      JSON.stringify(data, null, 2)
+    );
   } catch (error) {
     throw new Error("Error writing data to file.");
   }
