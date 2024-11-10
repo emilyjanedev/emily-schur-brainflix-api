@@ -87,7 +87,7 @@
       </ul>
     </section>
     <section>
-      <h2 id="authentication">Authentication</h2>
+      <h2>Authentication</h2>
       <ul>
         <li>
           To register with the API and get a key, make a GET request to
@@ -108,11 +108,11 @@
       </ul>
     </section>
     <section>
-      <h2 id="api-errors">API Errors</h2>
+      <h2>API Errors</h2>
       <ul>
         <li>
           This API may return a 400, 401, or 404 error
-          <li id="example-error-body">Example error body:</li>
+          <li>Example error body:</li>
           <pre><code class="lang-json">
   {
     <span class="hljs-attr">"message"</span>: <span class="hljs-string">"No video with that id exists"</span>
@@ -122,14 +122,14 @@
       </ul>
     </section>
     <section>
-      <h2 id="routes">Routes</h2>
+      <h2>Routes</h2>
       <section>
-        <h3 id="get-videos-">GET <code>/videos</code></h3>
+        <h3>GET <code>/videos</code></h3>
         <ul>
           <li>Returns an array of video objects</li>
           <li>
             Contains only enough information to display in side bar
-            <li id="response-body-example">Response body example:</li>
+            <li>Response body example:</li>
             <pre><code class="lang-json">
 [
   {
@@ -184,7 +184,7 @@
       </ul>
     </section>
     <section>
-      <h3 id="get-videos-id-">GET <code>/videos/:id</code></h3>
+      <h3>GET <code>/videos/:id</code></h3>
       <ul>
         <li>
           <code>:id</code> must be swapped out with the id of a video as found
@@ -238,7 +238,7 @@
         </li>
       </ul>
     </section>
-    <h3 id="get-videos-id-">PUT <code>/videos/:id/likes</code></h3>
+    <h3>PUT <code>/videos/:id/likes</code></h3>
     <ul>
       <li>
         <code>:id</code> must be swapped out with the id of a video as found in
@@ -293,7 +293,7 @@
     </ul>
     <section>
       <section>
-        <h3 id="post-videos-id-comments-">
+        <h3>
           POST <code>/videos/:id/comments</code>
         </h3>
         <ul>
@@ -326,7 +326,7 @@
         </ul>
       </section>
       <section>
-        <h3 id="delete-videos-videoid-comments-commentid-">
+        <h3>
           DELETE <code>/videos/:videoId/comments/:commentId</code>
         </h3>
         <ul>
@@ -355,7 +355,7 @@
           </li>
         </ul>
       </section>
-      <h3 id="delete-videos-videoid-comments-commentid-">
+      <h3>
         PUT <code>/videos/:videoId/comments/:commentId</code>
       </h3>
       <ul>
