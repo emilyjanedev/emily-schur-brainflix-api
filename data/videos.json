@@ -6,7 +6,7 @@
     "image": "http://localhost:8080/images/image0.jpg",
     "description": "Explore the cutting-edge developments and predictions for Artificial Intelligence in the coming years. From revolutionary breakthroughs in machine learning to the ethical considerations influencing AI advancements, this exploration transcends the boundaries of mere speculation. Join us on a journey that navigates the intricate interplay between innovation, ethics, and the ever-evolving tech frontier.",
     "views": "980,544",
-    "likes": "22,525",
+    "likes": "22,526",
     "duration": "4:01",
     "video": "http://localhost:8080/videos/stream.mp4",
     "timestamp": 1691471862000,
@@ -121,7 +121,7 @@
         "id": "a2b4ccd4-af48-46e9-9e62-b96731dad728",
         "name": "Cleo Polster",
         "comment": "Your video on mindful living came at the perfect time for me. Your practical tips for embracing serenity in daily life are incredibly helpful. I'm already feeling more centered and present. Grateful for the calming influence you bring to your content!",
-        "likes": 2,
+        "likes": 3,
         "timestamp": 1676441862000
       },
       {
@@ -312,88 +312,6 @@
         "comment": "sorting",
         "likes": 0,
         "timestamp": 1731199737267
-      }
-    ]
-  },
-  {
-    "id": "c354e0e9-03e5-494d-8833-8e434533d55f",
-    "title": "A Life of Mindfulness and Serenity",
-    "channel": "Emily Jane",
-    "image": "http://localhost:8080/images/image3.jpeg",
-    "description": "Lern how to slow down, relax, be grateful, and be content.",
-    "views": "123,456",
-    "likes": "1",
-    "duration": "4:01",
-    "video": "http://localhost:8080/videos/stream.mp4",
-    "timestamp": 1731178031850,
-    "comments": []
-  },
-  {
-    "id": "e3f0c4d1-0d3d-45de-bb95-c9a072a7653f",
-    "title": "Cat Halloween",
-    "channel": "Emily Jane",
-    "image": "http://localhost:8080/images/1985490.webp",
-    "description": "Cute cats going trick-or-treating on halloween!",
-    "views": "123,456",
-    "likes": "2",
-    "duration": "4:01",
-    "video": "http://localhost:8080/videos/stream.mp4",
-    "timestamp": 1731188350299,
-    "comments": [
-      {
-        "id": "8075f924-844f-4d61-9f6b-658c5fd73dba",
-        "name": "Second :(",
-        "comment": ":(",
-        "likes": 13,
-        "timestamp": 1731189170677
-      },
-      {
-        "id": "bbccf52e-e3f7-4227-8251-7af1cd3dea76",
-        "name": "dakjdf;akjfd",
-        "comment": "fdskjf;sakdjfd",
-        "likes": 0,
-        "timestamp": 1731189836879
-      },
-      {
-        "id": "a740fcbb-af89-4017-9dc7-cdfe7b490740",
-        "name": "yuh",
-        "comment": "wioop",
-        "likes": 0,
-        "timestamp": 1731201089546
-      }
-    ]
-  },
-  {
-    "id": "88a26da4-9fdf-46be-a2e8-4556130f77fc",
-    "title": "test!!",
-    "channel": "Emily Jane",
-    "image": "http://localhost:8080/images/IMG_7983.jpeg",
-    "description": "cool",
-    "views": "123,456",
-    "likes": "1",
-    "duration": "4:01",
-    "video": "http://localhost:8080/videos/stream.mp4",
-    "timestamp": 1731189427880,
-    "comments": []
-  },
-  {
-    "id": "a1f5e397-8e31-4bfb-b58a-97ff9f1b2b59",
-    "title": "yuppers",
-    "channel": "Emily Jane",
-    "image": "http://localhost:8080/images/IMG_7979.jpeg",
-    "description": "ohio",
-    "views": "123,456",
-    "likes": "8",
-    "duration": "4:01",
-    "video": "http://localhost:8080/videos/stream.mp4",
-    "timestamp": 1731201144091,
-    "comments": [
-      {
-        "id": "f99b436e-a073-4523-ac94-fd4761eb4f5b",
-        "name": "1yum",
-        "comment": "yummmmmmmmmmmmm",
-        "likes": 1,
-        "timestamp": 1731201169075
       }
     ]
   }
