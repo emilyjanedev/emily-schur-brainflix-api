@@ -85,9 +85,10 @@ Post body example:
     "description": "Come along with me on a day in my life. See what it's like to work as a graphic designer!"
     "fileData": "files[0]"
   }
+```
 
 Example response body:
-
+```json
   {
     "id": "84e96018-4022-434e-80bf-000ce4cd12b8",
     "title": "Day in the Life of a Graphic Designer",
@@ -210,7 +211,7 @@ Example response body:
 
 ```json
   {
-    "id": ade82e25-6c87-4403-ba35-47bdff93a51c,
+    "id": "ade82e25-6c87-4403-ba35-47bdff93a51c",
     "name": "Maria Aziz",
     "comment": "Your travel diaries are like a passport to wanderlust! Each city comes alive through your lens, making me feel like I'm right there with you. Your storytelling captures the essence of these enchanting places, igniting a desire to explore Europe even more. Can't wait for the next adventure!",
     "timestamp": 1690348662000
@@ -227,7 +228,7 @@ Example response body:
 
 ```json
 {
-"id": ade82e25-6c87-4403-ba35-47bdff93a51c,
+"id": "ade82e25-6c87-4403-ba35-47bdff93a51c",
 "name": "Maria Aziz",
 "comment": "Your travel diaries are like a passport to wanderlust! Each city comes alive through your lens, making me feel like I'm right there with you. Your storytelling captures the essence of these enchanting places, igniting a desire to explore Europe even more. Can't wait for the next adventure!",
 "timestamp": 1690348662000
@@ -244,7 +245,7 @@ Example response body:
 
 ```json
 {
-"id": ade82e25-6c87-4403-ba35-47bdff93a51c,
+"id": "ade82e25-6c87-4403-ba35-47bdff93a51c",
 "name": "Maria Aziz",
 "comment": "Your travel diaries are like a passport to wanderlust! Each city comes alive through your lens, making me feel like I'm right there with you. Your storytelling captures the essence of these enchanting places, igniting a desire to explore Europe even more. Can't wait for the next adventure!",
 "timestamp": 1690348662000
