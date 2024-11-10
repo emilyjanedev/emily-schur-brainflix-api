@@ -74,7 +74,7 @@ If you encounter any issues with API requests, double-check that the values in y
 ]
 ```
 
-### POST /videos
+### POST `/videos`
 
 Creates a new video.
 Post body example:
@@ -88,25 +88,26 @@ Post body example:
 ```
 
 Example response body:
+
 ```json
-  {
-    "id": "84e96018-4022-434e-80bf-000ce4cd12b8",
-    "title": "Day in the Life of a Graphic Designer",
-    "channel": "Emily Jane",
-    "image": "http://localhost:8080/images/image0.jpg",
-    "description": "Come along with me on a day in my life. See what it's like to work as a graphic designer!",
-    "views": "980,544",
-    "likes": "0",
-    "duration": "4:01",
-    "video": "http://localhost:8080/stream",
-    "timestamp": 1691471862000,
-    "comments": []
-  }
+{
+  "id": "84e96018-4022-434e-80bf-000ce4cd12b8",
+  "title": "Day in the Life of a Graphic Designer",
+  "channel": "Emily Jane",
+  "image": "http://localhost:8080/images/image0.jpg",
+  "description": "Come along with me on a day in my life. See what it's like to work as a graphic designer!",
+  "views": "980,544",
+  "likes": "0",
+  "duration": "4:01",
+  "video": "http://localhost:8080/stream",
+  "timestamp": 1691471862000,
+  "comments": []
+}
 ```
 
-### GET /videos/:id
+### GET `/videos/:id`
 
-- :id must be swapped out with the id of a video as found in the list of videos.
+- `:id` must be swapped out with the id of a video as found in the list of videos.
 - Returns a detailed object of a single video.
 - Details include the list of comments for that video.
 - Example response body:
@@ -149,9 +150,9 @@ Example response body:
 }
 ```
 
-### PUT /videos/:id/likes
+### PUT `/videos/:id/likes`
 
-- :id must be swapped out with the id of a video as found in the list of videos.
+- `:id` must be swapped out with the id of a video as found in the list of videos.
 - Likes the given video and returns it in the response body.
 - Details include the list of comments for that video.
 - Example response body:
@@ -194,9 +195,9 @@ Example response body:
 }
 ```
 
-### POST /videos/:id/comments
+### POST `/videos/:id/comments`
 
-- :id must be swapped out with the numeric id of a video as found in the list of videos.
+- `:id` must be swapped out with the numeric id of a video as found in the list of videos.
 - Creates a new comment for a specific video.
 - Post body example:
 
@@ -219,11 +220,11 @@ Example response body:
   }
 ```
 
-### DELETE /videos/:videoId/comments/:commentId
+### DELETE `/videos/:videoId/comments/:commentId`
 
 - Deletes the given comment and returns it in the response body.
-- :videoId must be swapped out with the numeric id of a video as found in the list of videos.
-- :commentId must be swapped out with the numeric id of a comment as found in the list of comments for the given video.
+- `:videoId` must be swapped out with the numeric id of a video as found in the list of videos.
+- `:commentId` must be swapped out with the numeric id of a comment as found in the list of comments for the given video.
 - Response body example:
 
 ```json
@@ -236,11 +237,11 @@ Example response body:
 }
 ```
 
-### PUT /videos/:videoId/comments/:commentId
+### PUT `/videos/:videoId/comments/:commentId`
 
 - Likes the given comment and returns it in the response body.
-- :videoId must be swapped out with the numeric id of a video as found in the list of videos.
-- :commentId must be swapped out with the numeric id of a comment as found in the list of comments for the given video.
+- `:videoId` must be swapped out with the numeric id of a video as found in the list of videos.
+- `:commentId` must be swapped out with the numeric id of a comment as found in the list of comments for the given video.
 - Response body example:
 
 ```json
