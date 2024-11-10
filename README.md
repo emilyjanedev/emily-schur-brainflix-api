@@ -36,7 +36,7 @@ If you encounter any issues with API requests, double-check that the values in y
 - To register with the API and get a key, make a GET request to `/register`
   - You can do this with the browser and you only need to do it once.
   - Store the key in a global variable in your front-end environment.
-- You must append ?api_key=<your_api_key_here> to each of your API request URLs (except for /register)
+- You must append `?api_key=<your_api_key_here>` to each of your API request URLs (except for /register)
 
 ### API Errors
 
@@ -76,8 +76,8 @@ If you encounter any issues with API requests, double-check that the values in y
 
 ### POST `/videos`
 
-Creates a new video.
-Post body example:
+- Creates a new video.
+- Post body example:
 
 ```json
   {
@@ -87,7 +87,7 @@ Post body example:
   }
 ```
 
-Example response body:
+- Example response body:
 
 ```json
 {
