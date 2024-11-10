@@ -51,7 +51,7 @@ If you encounter any issues with API requests, double-check that the values in y
 
 ### Routes
 
-#### GET `/videos`
+### GET `/videos`
 
 - Returns an array of video objects
 - Contains only enough information to display in side bar
@@ -74,7 +74,7 @@ If you encounter any issues with API requests, double-check that the values in y
 ]
 ```
 
-#### POST /videos
+### POST /videos
 
 Creates a new video.
 Post body example:
@@ -104,7 +104,7 @@ Example response body:
   }
 ```
 
-#### GET /videos/:id
+### GET /videos/:id
 
 - :id must be swapped out with the id of a video as found in the list of videos.
 - Returns a detailed object of a single video.
@@ -149,7 +149,7 @@ Example response body:
 }
 ```
 
-#### PUT /videos/:id/likes
+### PUT /videos/:id/likes
 
 - :id must be swapped out with the id of a video as found in the list of videos.
 - Likes the given video and returns it in the response body.
@@ -194,7 +194,7 @@ Example response body:
 }
 ```
 
-#### POST /videos/:id/comments
+### POST /videos/:id/comments
 
 - :id must be swapped out with the numeric id of a video as found in the list of videos.
 - Creates a new comment for a specific video.
@@ -219,7 +219,7 @@ Example response body:
   }
 ```
 
-#### DELETE /videos/:videoId/comments/:commentId
+### DELETE /videos/:videoId/comments/:commentId
 
 - Deletes the given comment and returns it in the response body.
 - :videoId must be swapped out with the numeric id of a video as found in the list of videos.
@@ -236,7 +236,7 @@ Example response body:
 }
 ```
 
-#### PUT /videos/:videoId/comments/:commentId
+### PUT /videos/:videoId/comments/:commentId
 
 - Likes the given comment and returns it in the response body.
 - :videoId must be swapped out with the numeric id of a video as found in the list of videos.
