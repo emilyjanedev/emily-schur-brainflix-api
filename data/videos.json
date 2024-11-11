@@ -340,40 +340,5 @@
     "video": "http://localhost:8080/videos/stream.mp4",
     "timestamp": 1731218921138,
     "comments": []
-  },
-  {
-    "id": "0970ebc2-5cdf-4d2a-8e45-5627f744926a",
-    "title": "testvideo123",
-    "channel": "Emily Jane",
-    "image": "http://localhost:8080/images/IMG_7987.jpeg",
-    "description": "hahaha",
-    "views": "123,456",
-    "likes": "7",
-    "duration": "4:01",
-    "video": "http://localhost:8080/videos/stream.mp4",
-    "timestamp": 1731267439985,
-    "comments": [
-      {
-        "id": "25b30edd-a2c2-4cb6-9a2a-fe0e482333b1",
-        "name": "hello pete",
-        "comment": "Hi petey!!",
-        "likes": 1,
-        "timestamp": 1731267462618
-      },
-      {
-        "id": "ea12c27c-3dbe-4fff-aa3f-7cdd1fdf2ebd",
-        "name": "PeteLover",
-        "comment": "We love pete!!!",
-        "likes": 6,
-        "timestamp": 1731267479469
-      },
-      {
-        "id": "e8d682cd-0906-40f8-9023-1f9763f93cdb",
-        "name": "tour de tukee",
-        "comment": "wookoo",
-        "likes": 1,
-        "timestamp": 1731267801344
-      }
-    ]
   }
 ]
