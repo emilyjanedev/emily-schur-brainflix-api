@@ -13,7 +13,7 @@ This project has environment variables set up for you, they can be adjusted if n
 - **`PORT`**: The port your server will run on. This should already be prefilled in `.env.example` but can be updated if necessary.
 - **`CORS_ORIGIN`**: The domain of your front-end. This allows the domain to access the server. This should already be prefilled in `.env.example` but can be updated if necessary.
 - **`DATA`**: The path to the JSON file storing video data. This should already be prefilled in `.env.example` but can be updated if necessary.
-- **`KEYS`**: The path to the JSON file storing registered API keys. This has been prefilled with the path to an empty "guest" version of the file. When you visit the `/register` endpoint of the API, your will recieve an API key, and it will be added to this file.
+- **`KEYS`**: The path to the JSON file storing registered API keys. This has been prefilled with the path to a "guest" version of the file that has a "guest" key already registered. When visiting the `/register` endpoint of the API, a usesr will recieve an API key, and it will be added to this file as a registered key.
 
 ### Running the Project
 

@@ -6,7 +6,7 @@
     "image": "http://localhost:8080/images/image0.jpg",
     "description": "Explore the cutting-edge developments and predictions for Artificial Intelligence in the coming years. From revolutionary breakthroughs in machine learning to the ethical considerations influencing AI advancements, this exploration transcends the boundaries of mere speculation. Join us on a journey that navigates the intricate interplay between innovation, ethics, and the ever-evolving tech frontier.",
     "views": "980,544",
-    "likes": "22,526",
+    "likes": "22,538",
     "duration": "4:01",
     "video": "http://localhost:8080/videos/stream.mp4",
     "timestamp": 1691471862000,
@@ -51,7 +51,7 @@
         "id": "ade82e25-6c87-4403-ba35-47bdff93a51c",
         "name": "Maria Aziz",
         "comment": "Your travel diaries are like a passport to wanderlust! Each city comes alive through your lens, making me feel like I'm right there with you. Your storytelling captures the essence of these enchanting places, igniting a desire to explore Europe even more. Can't wait for the next adventure!",
-        "likes": 0,
+        "likes": 1,
         "timestamp": 1690348662000
       },
       {
@@ -86,7 +86,7 @@
         "id": "7ba106bf-e74a-4c21-b59e-c485a30eea45",
         "name": "Giovana Silva",
         "comment": "Can't wait to try some of these gastronomic delights in my own kitchen. Keep those delicious discoveries coming!",
-        "likes": 1,
+        "likes": 2,
         "timestamp": 1700633862000
       },
       {
@@ -235,13 +235,6 @@
         "comment": "I've been an astronomy enthusiast for years, and your insights into the mysteries of the universe still managed to surprise and inspire me. The passion you bring to your explanations makes the cosmos even more fascinating.",
         "likes": 1,
         "timestamp": 1692854262000
-      },
-      {
-        "id": "b632b08e-79d7-441c-8904-c5cc7b3d2880",
-        "name": "hi",
-        "comment": "hi my name is pete",
-        "likes": 1,
-        "timestamp": 1731188839505
       }
     ]
   },
@@ -298,20 +291,88 @@
         "comment": "Your documentary on the history and technology of trains is a delightful treat for railway enthusiasts like me. The attention to detail and the chronological journey through time make it an educational and entertaining experience.",
         "likes": 0,
         "timestamp": 1701584262000
-      },
+      }
+    ]
+  },
+  {
+    "id": "68d74d6c-7dfb-4127-bb25-366c73eca609",
+    "title": "Yoga in the Mountains",
+    "channel": "Emily Jane",
+    "image": "http://localhost:8080/images/image3.jpeg",
+    "description": "Yoga in the mountains is the paramount of serenity, mindfulness, and peace!",
+    "views": "123,456",
+    "likes": "3",
+    "duration": "4:01",
+    "video": "http://localhost:8080/videos/stream.mp4",
+    "timestamp": 1731218778912,
+    "comments": [
       {
-        "id": "53ee6ee2-4017-4116-a4c1-8bceae00dac6",
-        "name": "Testing adding a new comment!",
-        "comment": "Woooooohooo!",
+        "id": "d052e11f-be84-4fa0-9c82-75171f7abe45",
+        "name": "Peter Jackson",
+        "comment": "What a peaceful video. Exactly what I needed on this hectic day. Thank you for sharing!",
         "likes": 1,
-        "timestamp": 1731109004497
+        "timestamp": 1731264003254
+      }
+    ]
+  },
+  {
+    "id": "1e52f4e3-9203-431f-81c4-9f74dc007ff5",
+    "title": "Deep Sea Exploration",
+    "channel": "Emily Jane",
+    "image": "http://localhost:8080/images/ocean.jpg",
+    "description": "Exploring the depths of the see on a futuristic underwater train.",
+    "views": "123,456",
+    "likes": "0",
+    "duration": "4:01",
+    "video": "http://localhost:8080/videos/stream.mp4",
+    "timestamp": 1731218869521,
+    "comments": []
+  },
+  {
+    "id": "3b47e5bf-0f5e-439b-b98b-d44a702da5ba",
+    "title": "Day in the Life of a Mountaineer",
+    "channel": "Emily Jane",
+    "image": "http://localhost:8080/images/Designer (2).jpeg",
+    "description": "Join me for a day in the life as a mountaineer.",
+    "views": "123,456",
+    "likes": "0",
+    "duration": "4:01",
+    "video": "http://localhost:8080/videos/stream.mp4",
+    "timestamp": 1731218921138,
+    "comments": []
+  },
+  {
+    "id": "0970ebc2-5cdf-4d2a-8e45-5627f744926a",
+    "title": "testvideo123",
+    "channel": "Emily Jane",
+    "image": "http://localhost:8080/images/IMG_7987.jpeg",
+    "description": "hahaha",
+    "views": "123,456",
+    "likes": "7",
+    "duration": "4:01",
+    "video": "http://localhost:8080/videos/stream.mp4",
+    "timestamp": 1731267439985,
+    "comments": [
+      {
+        "id": "25b30edd-a2c2-4cb6-9a2a-fe0e482333b1",
+        "name": "hello pete",
+        "comment": "Hi petey!!",
+        "likes": 1,
+        "timestamp": 1731267462618
       },
       {
-        "id": "33745935-f692-42c5-a896-12452ae06e7a",
-        "name": "testing comment",
-        "comment": "sorting",
-        "likes": 0,
-        "timestamp": 1731199737267
+        "id": "ea12c27c-3dbe-4fff-aa3f-7cdd1fdf2ebd",
+        "name": "PeteLover",
+        "comment": "We love pete!!!",
+        "likes": 6,
+        "timestamp": 1731267479469
+      },
+      {
+        "id": "e8d682cd-0906-40f8-9023-1f9763f93cdb",
+        "name": "tour de tukee",
+        "comment": "wookoo",
+        "likes": 1,
+        "timestamp": 1731267801344
       }
     ]
   }
